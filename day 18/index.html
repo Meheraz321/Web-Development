@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    
+    <h1>MD. MAHADI HASAN</h1>
+
+    <button id="btn">Click Me</button>
+
+    <p id="text">Move your mouse here</p>
+
+    <input type="text" name="" id="username">
+
+
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function () {
+            alert("Button Clicked!");
+        }) 
+
+
+        const text = document.getElementById("text");
+
+        text.addEventListener("mouseover", function () {
+            text.style.color = "red";
+        })
+
+        const input = document.getElementById("username");
+        input.addEventListener("keyup", function () {
+            console.log(input.value);
+        })
+    </script>
+
+</body>
+</html>

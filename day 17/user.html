@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="demo">Mahadi Hasan!</h1>
+    <h1 id="color">Mahadi Hasan!</h1>
+
+    <input type="text" name="" id="name">
+
+    <button onclick="showUserName()">Show Me</button>
+    <button onclick="showMode()">Mode</button>
+
+
+    <script>
+
+        function showUserName() {
+            let name = document.getElementById("name").value;
+            
+            if (name === "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            document.getElementById("demo").innerHTML = `Welcome ${name}!`;
+            document.getElementById("color").style.color = "blue";
+            alert(`Welcome ${name}`);
+        }
+
+        function showMode() {
+            document.body.style.backgroundColor = "plum";
+            document.body.style.color = "white";
+        }
+    </script>
+</body>
+
+</html>

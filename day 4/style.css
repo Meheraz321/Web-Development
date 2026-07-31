@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #d5f6eb;
+    color: #333;
+    /* padding: 50px 0; */
+}
+
+/* Navbar Header Styling */
+.navbar {
+    background-color: #c0dbe0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Screen-er upore bheshe thakbe scroll korleও */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.navbar .logo span {
+    color: #007BFF;
+    /* Logo-r sesh ongsho blue hobe */
+}
+
+/* Navigation Links Layout */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    /* Link gulor majhkhaner khali jayga */
+}
+
+/* Individual Link Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Hover Effect (Color Change) */
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+/* Hover Line Effect (Niche choto line ashbe) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007BFF;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Image Side */
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Content Side */
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Heading er niche ekta choto line */
+.about-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007BFF;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.about-content h3 {
+    font-size: 1.3rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.about-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Call to Action Button */
+.btn-read-more {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.btn-read-more:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design (Mobile er jonno) */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .about-content h2::after {
+        margin: 8px auto 0 auto;
+        /* Mobile-e line-ti majhkhane thakbe */
+    }
+}
+
+/* Skills Section Container */
+.skills-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Heading */
+.skills-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-heading h2 {
+    font-size: 2.3rem;
+    color: #222;
+    position: relative;
+    display: inline-block;
+}
+
+.skills-heading h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background-color: #28a745;
+    /* Shobuj color signature */
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Individual Skill Container */
+.skill-box {
+    margin-bottom: 25px;
+}
+
+/* Skill Info (Name & Percentage) */
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+/* Progress Bar Outer Line */
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Progress Bar Inner Line (Animated / Filled) */
+.skill-per {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    border-radius: 10px;
+    width: 0;
+    /* Initial width animation er jonno line-e control kora jay */
+    transition: width 1s ease-in-out;
+}
+
+
+.contact-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-heading h2 {
+    font-size: 2.5rem;
+    color: #222;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-heading h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ff4757;
+    /* Red/Coral Theme */
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Flexbox Layout for Info and Form */
+.contact-container {
+    display: flex;
+    gap: 50px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Side: Contact Info */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #ff4757;
+}
+
+.info-item .details h4 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.info-item .details p {
+    margin: 0;
+    color: #777;
+}
+
+/* Right Side: Contact Form */
+.contact-form {
+    flex: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff4757;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.2);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #e03747;
+}
+
+/* Responsive Design (Mobile First) */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info {
+        margin-bottom: 30px;
+    }
+}
+
+/* Footer Main Container */
+.main-footer {
+    background-color: #1a1a1a;
+    /* Dark Elegant Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+}
+
+/* Footer Columns Layout */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: table;
+    /* Table display layout for cross-compatibility */
+    width: 100%;
+}
+
+.footer-row {
+    display: table-row;
+}
+
+.footer-col {
+    display: table-cell;
+    width: 33.33%;
+    padding: 0 20px;
+    vertical-align: top;
+}
+
+/* Footer Content Styling */
+.footer-col h3 {
+    font-size: 1.2rem;
+    color: #007BFF;
+    /* Accent Blue Color */
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #007BFF;
+    margin-top: 5px;
+}
+
+.footer-col p {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Quick Links Styling */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+    /* Hover korle ektu dane jabe */
+}
+
+/* Social Icons Area */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #007BFF;
+    transform: translateY(-3px);
+}
+
+/* Copyright Bottom Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 20px 20px 0 20px;
+    border-top: 1px solid #2a2a2a;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #777777;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .footer-col {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .footer-container {
+        padding: 0 30px;
+    }
+}

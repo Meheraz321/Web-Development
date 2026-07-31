@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practice day 16!</h1>
+
+    <script>
+
+        let student = {
+            name: "Mahadi Hasan",
+            age: 20,
+            country: "Bangladesh",
+            isStuddent: true
+        };
+
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.country);
+
+        // Property Update
+        student.age = 21;
+        console.log(student.age);
+
+        // Property Add
+
+        student.skill = "JavaScript";
+        console.log(student);
+
+        // Object + Loop
+
+        for (let key in student) {
+            console.log(key + ":" + student[key]);
+        }
+
+
+
+    </script>
+</body>
+</html>

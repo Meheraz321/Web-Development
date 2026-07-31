@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="demo">Mahadi Hasan!</h1>
+    <h1 id="color">Mahadi Hasan!</h1>
+
+    <input type="text" name="" id="name">
+
+    <button onclick="show()">Show Me</button>
+    <button onclick="dark()">Dark Mode</button>
+    <button onclick="light()">Light Mode</button>
+
+    <script>
+        function show() {
+            document.getElementById("demo").innerHTML = "Welcome Meheraz Hosen!";
+            document.getElementById("color").style.color = "blue";
+            let name = document.getElementById("name").value;
+            alert("Welcome " + name);
+
+            
+        }
+
+        function dark() {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        }
+
+        function light() {
+            document.body.style.backgroundColor = "White";
+            document.body.style.color = "black";
+        }
+    </script>
+
+</body>
+</html>

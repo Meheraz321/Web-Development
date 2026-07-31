@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daraz Online</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: #2c3e50;
+        }
+
+
+
+
+
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .stat-badge {
+            font-size: 0.8rem;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            padding: 2px 6px;
+            vertical-align: super;
+        }
+
+        .stat-border-right {
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .signup-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 25px;
+            color: #333333;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-orange {
+            background-color: #f95f21;
+            color: white;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        .btn-orange:hover {
+            background-color: #e04b0e;
+            color: white;
+        }
+
+        .benefit-icon-box {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .container-1 {
+            background-color: #2b7fff;
+        }
+
+        .logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--navbar start-->
+    <nav class="navbar navbar-expand-lg" style="background-color: #bacad5;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo.png" alt="">Daraz</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="login.html">Log In</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="about.html">About</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--navbar end-->
+
+
+
+    <!-- About Section -->
+
+    <div class="container-1">
+        <section class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+
+                    <!-- Left Side Text & Stats -->
+                    <div class="col-lg-7">
+                        <h1 class="hero-title mb-4">
+                            GROW YOUR<br>BUSINESS<br>WITH US!
+                        </h1>
+
+                        <!-- Stats Numbers -->
+                        <div class="row text-center text-lg-start g-3 mt-2">
+                            <div class="col-4 stat-border-right">
+                                <div class="stat-number">5 <span class="stat-badge">M</span></div>
+                                <p class="small text-white-50 mb-0">Monthly Active Users</p>
+                            </div>
+                            <div class="col-4 stat-border-right">
+                                <div class="stat-number">22 <span class="stat-badge">M</span></div>
+                                <p class="small text-white-50 mb-0">Live Products Across 5 Countries</p>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-number">0 <span class="stat-badge">%</span></div>
+                                <p class="small text-white-50 mb-0">Platform Commission for 30 Days</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Form Card -->
+                    <div class="col-lg-5 col-md-8 mx-auto">
+                        <div class="signup-card">
+                            <h5 class="fw-bold mb-1">Sign up as a Seller</h5>
+                            <p class="small text-muted mb-3">
+                                Already have an account? Click to <a href="login.html"
+                                    class="text-decoration-none fw-semibold style-orange" style="color: #f95f21;">Log
+                                    in</a>
+                            </p>
+
+                            <form>
+                                <div class="mb-2">
+                                    <div class="input-group">
+                                        <input type="tel" class="form-control" placeholder="9xxxx">
+                                        <span class="input-group-text bg-light">
+                                            <span class="me-1">🇧🇩</span> +880
+                                        </span>
+                                    </div>
+                                    <div class="text-danger small mt-1" style="font-size: 12px;">Phone is Required</div>
+                                </div>
+
+                                <button type="submit" class="btn btn-orange w-100 my-3">Verify with SMS</button>
+
+                                <p class="text-muted text-center mb-0" style="font-size: 11px;">
+                                    By clicking Login, you agree to these
+                                    <a href="#" class="text-decoration-none text-muted fw-bold">Terms & Conditions</a>
+                                    and
+                                    <a href="#" class="text-decoration-none text-muted fw-bold">Privacy Policy</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="section-3">
+            <!-- BENEFITS SECTION -->
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <h3 class="text-center fw-bold mb-5" style="color: #2c3e50;">New Seller Benefits</h3>
+
+                    <div class="row g-4 text-center">
+                        <!-- Benefit 1 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-primary">
+                                <img src="img/icon-1.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">0% Commission</h6>
+                            <p class="text-muted small">0% Platform commission fee for 30 Days</p>
+                        </div>
+
+                        <!-- Benefit 2 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-success">
+                                <img src="img/icon-2.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">Free Shipping</h6>
+                            <p class="text-muted small">Offer Free Shipping via programs like FSM</p>
+                        </div>
+
+                        <!-- Benefit 3 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-warning">
+                                <img src="img/icon-3.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">Nationwide Reach</h6>
+                            <p class="text-muted small">Deliver your product anywhere in the country</p>
+                        </div>
+
+                        <!-- Benefit 4 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-purple" style="color: #6f42c1;">
+                                <img src="img/icon-4.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">Dedicated Support & Training</h6>
+                            <p class="text-muted small">Incubation specialist support for 90 days</p>
+                        </div>
+
+                        <!-- Benefit 5 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-danger">
+                                <img src="img/icon-5.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">Marketing Tools</h6>
+                            <p class="text-muted small">Create Product Ads to increase visibility in search results</p>
+                        </div>
+
+                        <!-- Benefit 6 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="benefit-icon-box bg-light text-info">
+                                <img src="img/icon-6.png" alt="" width="100" height="100">
+                            </div>
+                            <h6 class="fw-bold mb-1">Timely Payments</h6>
+                            <p class="text-muted small">Weekly payment cycles</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- About Section End -->
+
+
+    <!-- Accordion Start-->
+
+    <section class="steps-section">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" style="color: #1a2530;">Steps to Start Selling</h2>
+
+            <div class="row gy-4 align-items-center">
+                <!-- Left Side Text & Button -->
+                <div class="col-lg-5">
+                    <p class="text-secondary leading-relaxed mb-4" style="font-size: 0.95rem;">
+                        Sign up now to be a Daraz Seller! Daraz offers good opportunity and support for you to dive into
+                        the market and grow your customer base with ease. As a Daraz Seller, you will get access to
+                        various resources to help you drive your business on our platform.
+                    </p>
+                    <a href="signup.html" class="btn btn-primary btn-lg fs-6 fw-semibold px-4 py-2"
+                        style="background-color: #2b7fff; border: none; border-radius: 8px;">
+                        Sign up now
+                    </a>
+                </div>
+
+                <!-- Right Side Accordion Steps -->
+                <div class="col-lg-7">
+                    <div class="accordion d-flex flex-column gap-3" id="stepsAccordion">
+
+                        <!-- Step 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#step1">
+                                    1. &nbsp; Sign up with a phone number
+                                </button>
+                            </h2>
+                            <div id="step1" class="accordion-collapse collapse show" data-bs-parent="#stepsAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Enter your valid mobile number to receive an OTP and create your seller account
+                                    instantly.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#step2">
+                                    2. &nbsp; Fill in contact email & address details
+                                </button>
+                            </h2>
+                            <div id="step2" class="accordion-collapse collapse" data-bs-parent="#stepsAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Provide your business email and warehouse/pickup location for order collection.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#step3">
+                                    3. &nbsp; Submit ID and Bank Account details
+                                </button>
+                            </h2>
+                            <div id="step3" class="accordion-collapse collapse" data-bs-parent="#stepsAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Upload your NID/Passport and Bank check copy for weekly payout verification.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#step4">
+                                    4. &nbsp; Upload products and get orders!
+                                </button>
+                            </h2>
+                            <div id="step4" class="accordion-collapse collapse" data-bs-parent="#stepsAccordion">
+                                <div class="accordion-body text-muted small">
+                                    List your products with attractive images & prices to start receiving orders
+                                    nationwide.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accordion End-->
+
+    <!--fotter-->
+    <footer>
+        <p class="footer">Online Shoping © Daraz 2026</p>
+    </footer>
+
+    <!--script js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

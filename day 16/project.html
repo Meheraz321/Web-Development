@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Object Create</h1>
+
+    <script>
+
+        let student = {
+            name: "Mahadi Hasan",
+            age: 19,
+            country: "Bangladesh",
+            skills: ["HTML", "CSS", "JavaScript", "Node.js"]
+        };
+
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.country);
+        console.log(student.skills);
+
+        
+        student.age = 21;
+        console.log(student.age);
+        
+        for (let key in student) {
+            console.log(key + ":" + student[key]);
+        }
+
+        student.email = "mdmeherazhosen@gmail.com";
+        console.table(student);
+
+
+    </script>
+</body>
+</html>

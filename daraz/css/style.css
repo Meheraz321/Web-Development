@@ -1,0 +1,103 @@
+/* ১. সফট লাইট ব্যাকগ্রাউন্ড */
+.product-section {
+    background-color: #f4f6f9;
+    padding: 60px 0;
+}
+
+/* ২. সেকশন টাইটেল */
+.section-title {
+    font-weight: 700;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #f95f21;
+    /* ব্র্যান্ড অরেঞ্জ কালার */
+    border-radius: 2px;
+}
+
+/* ৩. প্রোডাক্ট কার্ড আধুনিকায়ন */
+.custom-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+    border-color: transparent;
+}
+
+/* ৪. ছবি ঠিক করার স্টাইল */
+.card-img-wrapper {
+    height: 210px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ছবি যেন চ্যাপ্টা না হয়ে পারফেক্ট সাইজে ফিট হয় */
+    transition: transform 0.5s ease;
+}
+
+.custom-card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+    /* স্মুথ জুম */
+}
+
+/* ৫. টেক্সট ও বাটনের এলাইনমেন্ট */
+.card-title {
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+.card-text {
+    color: #64748b;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    /* টেক্সট সর্বোচ্চ ৩ লাইনে সীমাবদ্ধ রাখার জন্য */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ৬. কাস্টম বাটন স্টাইল */
+.btn-buy {
+    background-color: #f95f21;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-buy:hover {
+    background-color: #e04b0e;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(249, 95, 33, 0.3);
+}
+
+.logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            padding: 4px;
+        }

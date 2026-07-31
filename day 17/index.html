@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <!-- onclick button -->
+    <h1 id="title">Hello Jan!</h1>
+    <button onclick="changeText()">Click Me</button>
+
+    <p id="demo">JavaScript is awesome!</p>
+    <button onclick="changeColor()">Change Color</button>
+
+     <!-- Getting the value from the input -->
+      <input type="text" name="Mahadi Hasan" id="name">
+      <button onclick="showName()">Show</button>
+
+
+    <script>
+    // onclick button
+        function changeText() {
+            document.getElementById("title").innerHTML = "Welcome Mahadi Hasan!";
+        }
+
+        function changeColor() {
+            document.getElementById("demo").style.color = "blue";
+        }
+
+        // Getting the value from the input
+        function showName() {
+            let name = document.getElementById("name").value;
+            alert("Hello" + name);
+        }
+
+
+    </script>
+
+</body>
+</html>

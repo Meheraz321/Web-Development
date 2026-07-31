@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 768px) {
+            .navber {
+                flex-direction: column;
+            }
+        }
+
+        .navber {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border: 2px solid black;
+            padding: 10px;
+
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+
+        }
+
+        .box {
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box {
+            position: static;
+            top: 20px;
+        }
+
+        .card-1 {
+            position: relative;
+            border: 2px solid black;
+            padding: 20px;
+
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            align-items: center;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--navber start-->
+    <nav class="navber">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Skills</a>
+        <a href="#">Contact</a>
+    </nav>
+    <!--navber end-->
+
+    <!--box-design-->
+    <div class="grid-container">
+        <div class="box">
+            <h3>Flower 1</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 2</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 3</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 4</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 5</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 6</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-1">
+        <span class="badge">NEW</span>
+        <img src="img/pic-3.jpg" alt="">
+    </div>
+
+
+
+</body>
+
+</html>

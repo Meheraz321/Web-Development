@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <h1 id="count">Count: 0</h1>
+
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="reset">Reset</button>
+
+    <script>
+
+        // Variable
+        let count = 0;
+
+        // DOM
+        const display = document.getElementById("count");
+        const plus = document.getElementById("plus");
+        const minus = document.getElementById("minus");
+        const reset = document.getElementById("reset");
+
+        // + Button
+        plus.addEventListener("click", function () {
+            count++;
+            display.innerHTML = "Count: " + count;
+        });
+
+        // - Button
+        minus.addEventListener("click", function () {
+            count--;
+            display.innerHTML = "Count: " + count;
+        });
+
+        // Reset Button
+        reset.addEventListener("click", function () {
+            count = 0;
+            display.innerHTML = "Count: " + count;
+        });
+
+    </script>
+
+</body>
+
+</html>

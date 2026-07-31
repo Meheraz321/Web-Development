@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="username">
+
+    <p id="demo">This is a Practice Time</p>
+
+    <button id="btn" onclick="btn()">Click Me</button>
+
+
+    <script>
+        function btn () {
+            document.getElementById("demo").innerHTML = "MD MEHERAZ HOSEN";
+            
+            
+
+        }
+
+        const demo = document.getElementById("demo");
+
+        demo.addEventListener("mouseover", function () {
+            demo.style.color = "blue";
+        });
+        
+        demo.addEventListener("mouseout", function () {
+            demo.style.color = "black";
+        });
+
+
+        const input = document.getElementById("username");
+
+        input.addEventListener("keyup", function () {
+            console.log(input.value);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Responsive Portfolio</title>
+    <style>
+        /* ==========================================
+           ১. BASIC RESET & CORE STYLES
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            /* Native smooth scroll fallback */
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Section Layout Configuration */
+        section {
+            padding: 100px 10%;
+            min-height: auto;
+        }
+
+        /* Utility Container for Shared Headings */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #222;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #007BFF;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ==========================================
+           ২. MODERN NAVBAR STYLES
+           ========================================== */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .logo a {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #333333;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar .logo span {
+            color: #007BFF;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        /* Hover & Active System */
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #007BFF;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #007BFF;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* ==========================================
+           ৩. HOME / HERO SECTION
+           ========================================== */
+        #home {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        #home h1 span {
+            color: #007BFF;
+        }
+
+        #home p {
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* ==========================================
+           ৪. ABOUT SECTION STYLES
+           ========================================== */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h3 {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .btn-general {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+        }
+
+        .btn-general:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           ৫. SKILLS SECTION STYLES
+           ========================================== */
+        #skills {
+            background-color: #ffffff;
+        }
+
+        .skills-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-box {
+            margin-bottom: 30px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-per {
+            height: 100%;
+            background: linear-gradient(90deg, #007BFF, #00c6ff);
+            border-radius: 10px;
+            width: 0;
+            /* JS handle korbe animate hobar jonno */
+            transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+        }
+
+        /* ==========================================
+           ৬. CONTACT SECTION STYLES
+           ========================================== */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            background: #fff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .info-item .icon {
+            font-size: 1.6rem;
+            margin-right: 20px;
+            background: #f0f4f8;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #007BFF;
+        }
+
+        .info-item .details h4 {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .info-item .details p {
+            margin: 0;
+            color: #777;
+        }
+
+        .contact-form {
+            flex: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007BFF;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+        }
+
+        .form-group textarea {
+            height: 160px;
+            resize: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* ==========================================
+           ৭. ELEGANT FOOTER STYLES
+           ========================================== */
+        .main-footer {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 60px 0 20px 0;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            color: #007BFF;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #007BFF;
+            padding-left: 6px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #007BFF;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0 auto;
+            padding: 25px 20px 0 20px;
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           ৮. RESPONSIVE DESIGN (RESPONSIVE SYSTEM)
+           ========================================== */
+        @media (max-width: 991px) {
+            section {
+                padding: 80px 5%;
+            }
+
+            .about-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="#home">My<span>Portfolio</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#skills" class="nav-item">Skills</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+    </header>
+
+    <section id="home">
+        <h1>Hi, I am <span>MD. MEHERAZ</span></h1>
+        <p>Full-Stack Web Developer passionate about building clean, modern, and responsive web applications.</p>
+        <a href="#contact" class="btn-general">Hire Me</a>
+    </section>
+
+    <section id="about">
+        <div class="section-heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/380x400" alt="Meheraz">
+            </div>
+            <div class="about-content">
+                <h3>Professional Web Developer & Designer</h3>
+                <p>Ami ekti professional web developer. Dirghodin dhore ami HTML, CSS, JavaScript, React.js, Node.js
+                    ebong MongoDB niye kaj korchi। Responsive ebong dynamic single-page application toiri korai amar
+                    bhalobasha।</p>
+                <p>Tech stack-er protiti layer-e code optimize kora ebong seamless user experience prodan korai amar
+                    pradhanno।</p>
+                <a href="#contact" class="btn-general">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-heading">
+            <h2>My Skills</h2>
+        </div>
+        <div class="skills-wrapper">
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>HTML5 & CSS3</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-per" data-width="95%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>JavaScript (ES6+)</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-per" data-width="85%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>React.js</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-per" data-width="80%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>Node.js & MongoDB</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-per" data-width="75%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-heading">
+            <h2>Contact Me</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's build something great!</h3>
+                <p>Apnar projects ba company hiring er joruri alochonar jonno jogajog korte nicher panel-ti use korun।
+                </p>
+
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div class="details">
+                        <h4>Location</h4>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon">📧</div>
+                    <div class="details">
+                        <h4>Email</h4>
+                        <p>meheraz321@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="portfolioContactForm">
+                    <div class="form-group">
+                        <input type="text" id="userName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="userEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="userMessage" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>About Portfolio</h3>
+                <p>Eti amar ekti interactive single page web developer portfolio website, ja modern UI/UX dynamic
+                    approach maintain kore banano hoyeche।</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">LN</a>
+                    <a href="#">GH</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 | Designed & Developed by MD. MEHERAZ</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+
+            // --- ১. PROFESSIONAL SMOOTH SCROLLING ---
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 70, // Navbar width matching buffer
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- ২. SCROLL SPY ENGINE (ACTIVE HIGH-LIGHT SYSTEM) ---
+            window.addEventListener('scroll', () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // --- ৩. SKILLS ANIMATION TRIGGER ---
+            // Scroll kore skills wrapper e ashle skill-per-er values gulo fluid load hobe
+            const skillsSection = document.getElementById('skills');
+            const skillProgressBars = document.querySelectorAll('.skill-per');
+
+            const animateSkills = () => {
+                const sectionPos = skillsSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight / 1.2;
+
+                if (sectionPos < screenPos) {
+                    skillProgressBars.forEach(bar => {
+                        const targetWidth = bar.getAttribute('data-width');
+                        bar.style.width = targetWidth;
+                    });
+                    // Ekbar load hole event handeler soriye nibe performance optimization er jonno
+                    window.removeEventListener('scroll', animateSkills);
+                }
+            };
+            window.addEventListener('scroll', animateSkills);
+
+
+            // --- ৪. FORM VALIDATOR & INTERACTION ---
+            const form = document.getElementById('portfolioContactForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('userName').value.trim();
+                const email = document.getElementById('userEmail').value.trim();
+                const message = document.getElementById('userMessage').value.trim();
+
+                if (name && email && message) {
+                    alert(`Dhonnobad, ${name}! Apnar barta-ti sfolbhabe amader kache poucheche।`);
+                    form.reset();
+                } else {
+                    alert("Anugroho kore form-er shobgulo mandatory ghore sothik info din।");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

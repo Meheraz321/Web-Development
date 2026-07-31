@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .box {
+            position: static;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--box-design-->
+    <div class="grid-container">
+        <div class="box">
+            <h3>Flower 1</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 2</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 3</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 4</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 5</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Flower 6</h3>
+            <div class="gallery">
+                <img class="card" src="img/pic-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
