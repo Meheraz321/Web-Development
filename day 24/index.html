@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-DO-List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To-DO-List</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">
+
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const addTask = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+
+        addTask.addEventListener("click", function () {
+
+            if (taskInput.value.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            };
+
+            const li = document.createElement("li");
+            li.textContent = taskInput.value + " ";
+
+            // delete option
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+
+            deleteButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                taskList.removeChild(li);
+            });
+
+            li.appendChild(deleteButton);
+            taskList.appendChild(li);
+
+
+            //    toggle option
+            li.addEventListener("click", function () {
+                li.classList.toggle("completed");
+            });
+
+            taskInput.value = "";
+        });
+
+        // enter key
+        taskInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask.click();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

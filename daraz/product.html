@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daraz Online</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-        <style>
-            body{
-                background: #7e8b8893;
-            }
-        </style>
 </head>
 
 <body>
@@ -67,82 +63,109 @@
                 Product
             </h2>
         </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">BMW Umbrella</h5>
-                        <p class="card-text">BMW Umbrellas For Rain Windproof Automatic Open Umbrella
-                            Compact Large Chhataa.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+        <div class="row g-4">
+
+            <!-- Product 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-1.jpg" alt="BMW Umbrella">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">BMW Umbrella</h5>
+                            <p class="card-text">BMW Umbrellas For Rain Windproof Automatic Open Umbrella Compact Large
+                                Chhataa.</p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Mobile Phone Radiator</h5>
-                        <p class="card-text">Mobile phone radiators and gaming cooling fans in Bangladesh generally.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+            <!-- Product 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-2.jpg" alt="Mobile Phone Radiator">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">Mobile Phone Radiator</h5>
+                            <p class="card-text">Mobile phone radiators and gaming cooling fans in Bangladesh generally.
+                            </p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Smart Camera</h5>
-                        <p class="card-text">The exact cost varies depending on the brand, camera resolution, outdoor
-                            weatherproofing.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+            <!-- Product 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-3.jpg" alt="Smart Camera">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">Smart Camera</h5>
+                            <p class="card-text">The exact cost varies depending on the brand, camera resolution,
+                                outdoor weatherproofing.</p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-4.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Stylish Dress</h5>
-                        <p class="card-text">The final cost depends significantly on the fabric quality, complexity of
-                            design.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+            <!-- Product 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-4.jpg" alt="Stylish Dress">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">Stylish Dress</h5>
+                            <p class="card-text">The final cost depends significantly on the fabric quality, complexity
+                                of design.</p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-5.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop Stand</h5>
-                        <p class="card-text">Computer Stands online in Bangladesh | Upto 50% Discount.
-                        </p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+            <!-- Product 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-5.png" alt="Laptop Stand">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">Laptop Stand</h5>
+                            <p class="card-text">Computer Stands online in Bangladesh | Upto 50% Discount.</p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/card-6.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Memory Cad</h5>
-                        <p class="card-text">Buy the latest memory cards at the best price in BD from Techland BD.
-                            genuine memory card.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
+            <!-- Product 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card custom-card h-100">
+                    <div class="card-img-wrapper">
+                        <img src="img/card-6.png" alt="Memory Card">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold mb-2">Memory Card</h5>
+                            <p class="card-text">Buy the latest memory cards at the best price in BD from Techland BD.
+                                genuine memory card.</p>
+                        </div>
+                        <button class="btn btn-buy w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Buy Now</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
