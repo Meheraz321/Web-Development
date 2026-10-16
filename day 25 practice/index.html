@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-DO-List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To-DO-List</h1>
+
+    <p id="taskCounter">Total: 0 | Completed: 0 | Remaining: 0</p>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const addTask = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+        const taskCounter = document.getElementById("taskCounter");
+
+        // Function to update the counter
+        function updateCounter() {
+            const totalTasks = document.querySelectorAll("#taskList li").length;
+            const completedTasks = taskList.querySelectorAll("li input[type='checkbox']:checked").length;
+            const remainingTasks = totalTasks - completedTasks;
+
+            taskCounter.textContent = `Total: ${totalTasks} | Completed: ${completedTasks} | Remaining: ${remainingTasks}`;
+        }
+
+        addTask.addEventListener("click", function () {
+            if (taskInput.value.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            // Creating a checkbox (for marking as completed)
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+
+            // Task text
+            const taskText = document.createElement("span");
+            taskText.textContent = " " + taskInput.value.trim() + " ";
+
+            // The style and counter will update when the checkbox changes.
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    taskText.classList.add("completed");
+                } else {
+                    taskText.classList.remove("completed");
+                }
+                updateCounter();
+            });
+
+            // Edit Button
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.addEventListener("click", function () {
+                const currentText = taskText.textContent.trim();
+                const newTask = prompt("Edit your task:", currentText);
+
+                if (newTask !== null && newTask.trim() !== "") {
+                    taskText.textContent = " " + newTask.trim() + " ";
+                }
+            });
+
+            // Delete Button
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", function () {
+                li.remove();
+                updateCounter();
+            });
+
+            // Combining all the ingredients together
+            li.appendChild(checkbox);
+            li.appendChild(taskText);
+            li.appendChild(editButton);
+            li.appendChild(deleteButton);
+
+            taskList.appendChild(li);
+            taskInput.value = "";
+
+            updateCounter();
+        });
+
+        // Enter key press support
+        taskInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask.click();
+            }
+        });
+    </script>
+</body>
+
+</html>

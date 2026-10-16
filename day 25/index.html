@@ -26,36 +26,57 @@
         const addTask = document.getElementById("addTask");
         const taskList = document.getElementById("taskList");
 
+
         addTask.addEventListener("click", function () {
 
             if (taskInput.value.trim() === "") {
                 alert("Please enter a task!");
                 return;
-            };
+            }
 
             const li = document.createElement("li");
-            li.textContent = taskInput.value + " ";
 
-            // delete option
+            // Task text 
+            const taskText = document.createElement("span");
+            taskText.textContent = taskInput.value.trim();
+
+            // Edit Button
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+
+            editButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                const newTask = prompt("Edit your task:", taskText.textContent);
+
+                if (newTask !== null && newTask.trim() !== "") {
+                    taskText.textContent = newTask.trim();
+                }
+            });
+
+            // Delete Button
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
 
             deleteButton.addEventListener("click", function (event) {
                 event.stopPropagation();
-                taskList.removeChild(li);
+                li.remove();
             });
 
+            li.appendChild(taskText);
+            li.appendChild(editButton);
             li.appendChild(deleteButton);
-            taskList.appendChild(li);
 
 
-            //    toggle option
+            //Toggle Option
             li.addEventListener("click", function () {
                 li.classList.toggle("completed");
             });
 
+            taskList.appendChild(li);
             taskInput.value = "";
         });
+
 
         // enter key
         taskInput.addEventListener("keydown", function (event) {
@@ -64,9 +85,6 @@
             }
         });
 
-        const editButton = document.createElement("button");
-        editButton.textContent = "Edit";
-        let newTask = prompt("Edit your task;", ...);
 
     </script>
 </body>
