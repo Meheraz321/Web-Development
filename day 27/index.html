@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List-LocalStorage Save and Clear All Tasks</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To-Do List-LocalStorage</h1>
+
+    <p id="taskCounter">Total: 0 | Completed: 0 | Remaining: 0</p>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="saveBtn">Save Name</button>
+    <button id="showBtn">Show Name</button>
+
+    <p id="result"></p>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTask">Add Task</button>
+    <button id="clearAllBtn">Clear All Tasks</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const addTask = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+        const taskCounter = document.getElementById("taskCounter");
+        const nameInput = document.getElementById("nameInput");
+        const saveBtn = document.getElementById("saveBtn");
+        const showBtn = document.getElementById("showBtn");
+        const result = document.getElementById("result");
+        const clearAllBtn = document.getElementById("clearAllBtn");
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        saveBtn.addEventListener("click", function () {
+            if (nameInput.value.trim() === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            localStorage.setItem("userName", nameInput.value);
+            alert("Name saved!");
+            nameInput.value = "";
+        });
+
+        showBtn.addEventListener("click", function () {
+            const saveName = localStorage.getItem("userName");
+            result.textContent = saveName ?? "No name saved";
+        });
+
+        function saveTasks() {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        // Function to update the counter
+        function updateCounter() {
+            const totalTasks = document.querySelectorAll("#taskList li").length;
+            const completedTasks = taskList.querySelectorAll("li input[type='checkbox']:checked").length;
+            const remainingTasks = totalTasks - completedTasks;
+
+            taskCounter.textContent = `Total: ${totalTasks} | Completed: ${completedTasks} | Remaining: ${remainingTasks}`;
+        }
+
+   
+        function renderTasks() {
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.checked = task.completed;
+
+                const taskText = document.createElement("span");
+                taskText.textContent = " " + task.text + " ";
+
+                if (task.completed) {
+                    taskText.classList.add("completed");
+                }
+
+                //  Complete Task: Checkbox status change
+                checkbox.addEventListener("change", function () {
+                    tasks[index].completed = checkbox.checked;
+                    if (checkbox.checked) {
+                        taskText.classList.add("completed");
+                    } else {
+                        taskText.classList.remove("completed");
+                    }
+                    saveTasks();
+                    updateCounter();
+                });
+
+                // Edit Button
+                const editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.addEventListener("click", function () {
+                    const currentText = tasks[index].text;
+                    const newTask = prompt("Edit your task:", currentText);
+
+                    if (newTask !== null && newTask.trim() !== "") {
+                        tasks[index].text = newTask.trim();
+                        taskText.textContent = " " + newTask.trim() + " ";
+                        saveTasks();
+                    }
+                });
+
+                // Delete Task: Remove from array and storage
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", function () {
+                    tasks.splice(index, 1);
+                    saveTasks();
+                    renderTasks();
+                    updateCounter();
+                });
+
+                li.appendChild(checkbox);
+                li.appendChild(taskText);
+                li.appendChild(editButton);
+                li.appendChild(deleteButton);
+                taskList.appendChild(li);
+            });
+            updateCounter();
+        }
+
+        //  Add Task: Add to array and save
+        addTask.addEventListener("click", function () {
+            if (taskInput.value.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const newTaskObj = {
+                text: taskInput.value.trim(),
+                completed: false
+            };
+
+            tasks.push(newTaskObj);
+            saveTasks();
+            renderTasks();
+
+            taskInput.value = "";
+        });
+
+        // Enter key press support
+        taskInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask.click();
+            }
+        });
+
+        // Clear All Tasks
+        clearAllBtn.addEventListener("click", function () {
+            if (confirm("Are you sure you want to clear all tasks?")) {
+                tasks = [];
+                saveTasks();
+                renderTasks();
+                updateCounter();
+            }
+        });
+
+        renderTasks();
+    </script>
+</body>
+
+</html>

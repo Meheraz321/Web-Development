@@ -1,34 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unknow</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   <header class="navber">
-     <div class="logo">
-        <a href=""></a>
-     </div>
-
-    <ul class="nav">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Help Us</li>
-        </ul>
-    </ul>
-   </header>
-
-
-    <!-- Container -->
-     <div class="container">
-        <div class="card">
-            <img src="" alt="">
-            <p></p>
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">My<span>Portfolio</span></a>
         </div>
-     </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="about-section">
+        <!-- Chobi thakar jayga -->
+        <div class="about-image">
+            <!-- Ekhane apni apnar chobir link dite paren -->
+            <img src="img/Mahadi.jpg" alt="About Me">
+        </div>
+
+        <!-- Content thakar jayga -->
+        <div class="about-content">
+            <h2>About Me</h2>
+            <h1>MD MEHEDI HASAN</h1>
+            <h3>Professional Web Developer & Designer</h3>
+            <p>
+                I am a professional web developer. Must work with HTML, CSS, JavaScript, and various modern frameworks.
+                I am responsive ebong user-friendly website good for you. My goal is to present your business or
+                personal brand online.
+            </p>
+            <p>
+                Outside of work I love learning Newton technologies and contributing to the diverse tech community.
+            </p>
+            <a href="#" class="btn-read-more">Learn More</a>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="skills-heading">
+            <h2>My Skills</h2>
+        </div>
+
+        <!-- Skill 1: HTML -->
+        <div class="skill-box">
+            <div class="skill-info">
+                <span>HTML5</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-per" style="width: 95%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 2: CSS -->
+        <div class="skill-box">
+            <div class="skill-info">
+                <span>CSS3 & Bootstrap</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-per" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 3: JavaScript -->
+        <div class="skill-box">
+            <div class="skill-info">
+                <span>JavaScript</span>
+                <span>75%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-per" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 4: React JS -->
+        <div class="skill-box">
+            <div class="skill-info">
+                <span>React.js</span>
+                <span>70%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-per" style="width: 70%;"></div>
+            </div>
+        </div>
+
+        <!-- Skill 5: WordPress -->
+        <div class="skill-box">
+            <div class="skill-info">
+                <span>WordPress</span>
+                <span>80%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-per" style="width: 80%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-heading">
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-container">
+            <!-- Left Side: Contact Info -->
+            <div class="contact-info">
+                <h3>Let's talk about everything!</h3>
+                <p>For any questions, projects, or work-related matters, you can reach out to me using the form below or
+                    via the provided contact channels. I will do my best to respond as quickly as possible.</p>
+
+                <div class="info-item">
+                    <div class="icon">📍</div>
+                    <div class="details">
+                        <h4>Location</h4>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📧</div>
+                    <div class="details">
+                        <h4>Email</h4>
+                        <p>mdmeherazhosen44@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">📞</div>
+                    <div class="details">
+                        <h4>Phone</h4>
+                        <p>+880 1234-567890</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+
+                <div class="footer-col">
+                    <h3>About Me</h3>
+                    <p style="margin-bottom: 15px;">I am learning web development to build modern, interactive, and
+                        user-friendly web applications.</p>
+                    <p>The primary objective is to quickly create a strong portfolio.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Follow Me</h3>
+                    <p>Can follow on social media to chat and get regular updates of my work.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/md.mehedi.hasan.910103" title="Facebook">FB</a>
+                        <a href="#" title="Twitter">TW</a>
+                        <a href="#" title="LinkedIn">LN</a>
+                        <a href="https://github.com/Meheraz321" title="GitHub">GH</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 | Designed & Developed by MD Meheraz Hosen</p>
+        </div>
+    </footer>
+
+    <script src="javascrpt.js"></script>
 </body>
+
 </html>
