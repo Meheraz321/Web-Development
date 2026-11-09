@@ -4,103 +4,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Flower Gallery Card Layout</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            justify-content: space-between;
-            align-items: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        
         .navber {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            border: 2px solid black;
+            align-items: center;
+            gap: 30px;
+            padding: 18px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .card img{
-            width: 100%;
-            height: auto;
+        .navber a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
+        .navber a:hover {
+            color: #0d9488;
+        }
+
+        .hero-banner {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .hero-banner div {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111827;
+            display: inline-block;
+        }
+
+        .hero-banner div:last-child {
+            color: #0d9488;
+            margin-left: 8px;
+        }
+
+       
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 1250px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+        }
+
+     
         .card {
-            height: 58vh;
-            width: 280px;
-            padding: 5px;
-            border: 2px solid black;
+            width: 270px;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
         }
 
         .card:hover {
-            background-color: lightgray;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
 
-        h3 {
-            font-weight: bold;
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .h3, h3.title {
+            font-size: 1.25rem;
+            font-weight: 600;
             text-align: center;
-            align-items: center;
+            color: #1f2937;
+            margin: 14px 0 8px;
         }
 
-        span {
-            border: 2px solid rgb(240, 234, 234);
-            background-color: rgba(128, 202, 202, 0.787);
-            padding: 4px;
-            overflow: hidden;
+        .card p {
+            font-size: 0.88rem;
+            color: #6b7280;
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+      
+        .card span {
+            display: block;
+            text-align: center;
+            background-color: #0d9488;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card span:hover {
+            background-color: #0f766e;
         }
     </style>
 </head>
 
 <body>
-    <!--navber start-->
+    <!-- navbar start -->
     <nav class="navber">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Skills</a>
         <a href="#">Contact</a>
     </nav>
-    <!--navber end-->
+    <!-- navbar end -->
 
-    <div>
+    <div class="hero-banner">
         <div>Hello</div>
         <div>World!</div>
     </div>
 
-
     <div class="container">
         <div class="card">
-            <img src="img/pic-1.jpg" alt="">
+            <img src="img/pic-1.jpg" alt="Flower Image">
             <h3 class="title">Flower</h3>
             <p>Embrace the purity and elegance of white blooms with these captivating captions for your Instagram posts.
-                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.
-                Discover the magic of simplicity.</p>
+                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.</p>
             <span>Open This Flower</span>
         </div>
+
         <div class="card">
-            <img src="img/pic-1.jpg" alt="">
+            <img src="img/pic-1.jpg" alt="Flower Image">
             <h3 class="title">Flower</h3>
             <p>Embrace the purity and elegance of white blooms with these captivating captions for your Instagram posts.
-                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.
-                Discover the magic of simplicity.</p>
+                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.</p>
             <span>Open This Flower</span>
         </div>
+
         <div class="card">
-            <img src="img/pic-1.jpg" alt="">
+            <img src="img/pic-1.jpg" alt="Flower Image">
             <h3 class="title">Flower</h3>
             <p>Embrace the purity and elegance of white blooms with these captivating captions for your Instagram posts.
-                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.
-                Discover the magic of simplicity.</p>
+                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.</p>
             <span>Open This Flower</span>
         </div>
+
         <div class="card">
-            <img src="img/pic-1.jpg" alt="">
+            <img src="img/pic-1.jpg" alt="Flower Image">
             <h3 class="title">Flower</h3>
             <p>Embrace the purity and elegance of white blooms with these captivating captions for your Instagram posts.
-                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.
-                Discover the magic of simplicity.</p>
+                From serene lilies to delicate daisies, let the beauty of white flowers shine through your feed.</p>
             <span>Open This Flower</span>
         </div>
     </div>
