@@ -4,22 +4,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mahadi Hasan - Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef2f3 0%, #d9e2ec 100%);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #333;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+      
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #1c4ec2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1c4ec2;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #1c4ec2;
+            color: #ffffff;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 950px;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1a202c;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e2e8f0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-color: #1c4ec2;
+        }
+
+       
+        .info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 35px;
+            align-items: center;
+        }
+
+        .info-list li {
+            width: 100%;
+            max-width: 600px;
+            padding: 14px 25px;
+            background: #e1e4e6;
+            /* border-left: 5px solid #1c4ec2; */
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            font-size: 19px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+       
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #1c4ec2;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(28, 78, 194, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #14388e;
+            transform: translateY(-2px);
+        }
+
+    
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <a href="https://www.facebook.com/">Facebook</a>
-        <a href="https://www.google.com/">Google</a>
+
+    <nav>
+        <img class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMkWIBwh6bF-X4OpxikVNUQ0rVxT9N0hikg&s"
+            alt="Logo">
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+
+        <div class="gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMkWIBwh6bF-X4OpxikVNUQ0rVxT9N0hikg&s"
+                alt="Profile 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMkWIBwh6bF-X4OpxikVNUQ0rVxT9N0hikg&s"
+                alt="Profile 2">
+        </div>
+
+        <ul class="info-list">
+            <li>My Name is Mahadi Hasan</li>
+            <li>Frontend & React Web Developer</li>
+            <li>Based in Bangladesh</li>
+        </ul>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            <a href="https://www.google.com/" target="_blank">Google</a>
+        </div>
     </div>
 
-    <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMkWIBwh6bF-X4OpxikVNUQ0rVxT9N0hikg&s" alt="">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMkWIBwh6bF-X4OpxikVNUQ0rVxT9N0hikg&s" alt="">
-    </div>
-    <div>
-        <ol>My Name is Mahadi Hasan</ol>
-    </div>
 </body>
 
 </html>
